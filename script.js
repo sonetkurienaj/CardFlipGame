@@ -40,7 +40,12 @@ function success() {
   console.log("Success both are matching");
   firstCard.removeEventListener("click", flip);
   secondCard.removeEventListener("click", flip);
-  resett();
+
+  setTimeout(() => {
+    firstCard.style.visibility = "hidden";
+    secondCard.style.visibility = "hidden";
+    resett();
+  }, 500);
 }
 //fail
 function fail() {
