@@ -27,6 +27,7 @@ function flip() {
 
 //checking
 function checkIt() {
+  console.log(firstCard.dataset);
   if (firstCard.dataset.image === secondCard.dataset.image) {
     success();
   } else {
@@ -53,17 +54,22 @@ function fail() {
 }
 //reset
 function resett() {
-  var isFlipped = false;
-  var firstCard = null;
-  var secondCard = null;
+  isFlipped = false;
+  firstCard = null;
+  secondCard = null;
 }
 //shuffle
-(function shuffle() {
+function shuffle() {
+  console.log("====================================");
+  console.log("shuffling");
+  console.log("====================================");
   cards.forEach((card) => {
     var index = Math.floor(Math.random() * 16);
     card.style.order = index;
   });
-})();
+}
+
+shuffle();
 
 //winning message displaying
 //auto refreshing
