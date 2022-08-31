@@ -10,24 +10,28 @@ cards.forEach((card) => card.addEventListener("click", flip));
 
 //flip
 function flip() {
+  console.log({
+    isFlipped,
+    firstCard,
+    secondCard,
+  });
+  if (isFlipped && firstCard && secondCard) return;
   console.log("card fliped");
-  console.log(this);
-  this.classList.add("flip");
 
   if (!isFlipped) {
     isFlipped = true;
     firstCard = this;
+    this.classList.add("flip");
   } else {
+    if (this.id === firstCard.id) return;
+    this.classList.add("flip");
     secondCard = this;
-    console.log(firstCard);
-    console.log(secondCard);
     checkIt();
   }
 }
 
 //checking
 function checkIt() {
-  console.log(firstCard.dataset);
   if (firstCard.dataset.image === secondCard.dataset.image) {
     success();
   } else {
@@ -71,6 +75,7 @@ function shuffle() {
   cards.forEach((card) => {
     var index = Math.floor(Math.random() * 16);
     card.style.order = index;
+    card.id = index;
   });
 }
 
