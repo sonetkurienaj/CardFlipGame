@@ -1,36 +1,30 @@
 const initialCount = 4;
 const logoImg = `<img src="logo.png" class="back" alt="logo" />`;
+const gameContainer = document.getElementById("gameContainer");
 
 const gameInit = (count) => {
-  document.getElementById("gameContainer").innerHTML = "";
+  gameContainer.innerHTML = "";
+
   for (let index = 0; index < count / 2; index++) {
     const cardImg = `<img src="https://avatars.dicebear.com/api/adventurer/${index}.svg" class="front flip" alt="${index}" />`;
-    const cardDiv = `<div class="card" data-image="${index}"> ${logoImg} ${cardImg}</div>`;
-
-    document.getElementById(
-      "gameContainer"
-    ).innerHTML += `${cardDiv} ${cardDiv}`;
+    const cardDiv = `<div  class="card" data-image="${index}"> ${logoImg} ${cardImg}</div>`;
+    gameContainer.innerHTML += `${cardDiv} ${cardDiv}`;
   }
 
   const cards = document.querySelectorAll(".card");
-  console.log(cards);
+  cards.forEach((card) => card.addEventListener("click", flip));
 
   //variables
-  let isFlipped = false;
-  let firstCard;
-  let secondCard;
-  let points = 0;
-
-  cards.forEach((card) => card.addEventListener("click", flip));
+  let isFlipped = false,
+    firstCard,
+    secondCard,
+    points = 0;
 
   //flip
   function flip() {
-    console.log({
-      isFlipped,
-      firstCard,
-      secondCard,
-    });
-    if (isFlipped && firstCard && secondCard) return;
+    if ((isFlipped && firstCard && secondCard) || this?.id === firstCard?.id)
+      return;
+
     console.log("card fliped");
 
     if (!isFlipped) {
@@ -38,7 +32,6 @@ const gameInit = (count) => {
       firstCard = this;
       this.classList.add("flip");
     } else {
-      if (this.id === firstCard.id) return;
       this.classList.add("flip");
       secondCard = this;
       checkIt();
@@ -47,17 +40,18 @@ const gameInit = (count) => {
 
   //checking
   function checkIt() {
-    console.log(firstCard.dataset.image, secondCard.dataset.image);
+    console.log("checking....");
+
     if (firstCard.dataset.image === secondCard.dataset.image) {
       success();
     } else {
       fail();
     }
-    console.log("checking....");
   }
   //success
   function success() {
-    console.log("Success both are matching");
+    console.log("Success!! both are matching");
+
     firstCard.removeEventListener("click", flip);
     secondCard.removeEventListener("click", flip);
 
@@ -68,25 +62,28 @@ const gameInit = (count) => {
       if (points === count / 2) {
         gameInit(count * 2);
       }
-      resett();
+      reset();
     }, 500);
   }
+
   //fail
   function fail() {
-    //console.log("Failed flip again");
+    console.log("Failed flip again");
 
     setTimeout(() => {
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
-      resett();
+      reset();
     }, 1000);
   }
+
   //reset
-  function resett() {
+  function reset() {
     isFlipped = false;
     firstCard = null;
     secondCard = null;
   }
+
   //shuffle
   function shuffle() {
     console.log("====================================");
