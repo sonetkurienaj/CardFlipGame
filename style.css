@@ -10,7 +10,7 @@ body{
     height: 100vh;
     background-color: #dcbb17;
     display: flex;
-   
+   flex-direction: column;
 }
 
 .gameContainer{
@@ -28,10 +28,12 @@ body{
 
 
 .container{
-    width: 600px;
-    height:30px;
+    width: 100%;
+    height:20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    margin-left: 21%;
 }
 
 
@@ -57,7 +59,7 @@ body{
 }
 .front,
 .back{
-    background-color: #d7e973;
+    background-color: #fff;
     width: 100%;
     height: 100%;
     padding: 10px;
