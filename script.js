@@ -108,7 +108,7 @@ const gameInit = (count) => {
       console.log("Game Over");
       gameInit(initialCount);
     } else {
-      elem.innerHTML = timeLeft + "";
+      elem.innerHTML = "Time left : " + timeLeft;
       timeLeft--;
     }
   }
