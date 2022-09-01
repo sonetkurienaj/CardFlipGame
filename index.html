@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,93 +9,101 @@
 
     <link rel="icon" href="hat.png" sizes="16x16" type="image/png" />
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <!--starting containers-->
 
     <div class="gameContainer">
-      <div class="container">
-        <h1 class="text-center text-white display-4">How Is Your memory</h1>
-      </div>
+        <!--set countdown-->
+        <div id="timer">
+        </div>
+        <div>
+            <p>_you lost</p>
+        </div>
+        <div class="container">
 
-      <!--extrasmile-->
-      <div class="card" data-image="extrasmile">
-        <img src="extrasmile.jpg" class="front flip" alt="extrasmile" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <div class="card" data-image="extrasmile">
-        <img src="extrasmile.jpg" class="front flip" alt="extrasmile" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <!--EEE-->
-      <div class="card" data-image="eee">
-        <img src="eee.jpg" class="front flip" alt="eee" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <div class="card" data-image="eee">
-        <img src="eee.jpg" class="front flip" alt="eee" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <!--zzz-->
-      <div class="card" data-image="zzz">
-        <img src="zzz.jpg" class="front flip" alt="zzz" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <div class="card" data-image="zzz">
-        <img src="zzz.jpg" class="front flip" alt="zzz" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <!--angelHead-->
-      <div class="card" data-image="angelHead">
-        <img src="angelHead.jpg" class="front flip" alt="angelHead" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <div class="card" data-image="angelHead">
-        <img src="angelHead.jpg" class="front flip" alt="angelHead" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
+            <h1 class="text-center text-white display-4">How Is Your memory</h1>
+        </div>
 
-      <!--smile-->
-      <div class="card" data-image="smile">
-        <img src="smile.jpg" class="front flip" alt="smile" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <div class="card" data-image="smile">
-        <img src="smile.jpg" class="front flip" alt="smile" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
+        <!--extrasmile-->
+        <div class="card" data-image="extrasmile">
+            <img src="extrasmile.jpg" class="front flip" alt="extrasmile" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <div class="card" data-image="extrasmile">
+            <img src="extrasmile.jpg" class="front flip" alt="extrasmile" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <!--EEE-->
+        <div class="card" data-image="eee">
+            <img src="eee.jpg" class="front flip" alt="eee" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <div class="card" data-image="eee">
+            <img src="eee.jpg" class="front flip" alt="eee" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <!--zzz-->
+        <div class="card" data-image="zzz">
+            <img src="zzz.jpg" class="front flip" alt="zzz" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <div class="card" data-image="zzz">
+            <img src="zzz.jpg" class="front flip" alt="zzz" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <!--angelHead-->
+        <div class="card" data-image="angelHead">
+            <img src="angelHead.jpg" class="front flip" alt="angelHead" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <div class="card" data-image="angelHead">
+            <img src="angelHead.jpg" class="front flip" alt="angelHead" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
 
-      <!--loveEye-->
-      <div class="card" data-image="loveEye">
-        <img src="loveEye.jpg" class="front flip" alt="loveEye" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <div class="card" data-image="loveEye">
-        <img src="loveEye.jpg" class="front flip" alt="loveEye" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
+        <!--smile-->
+        <div class="card" data-image="smile">
+            <img src="smile.jpg" class="front flip" alt="smile" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <div class="card" data-image="smile">
+            <img src="smile.jpg" class="front flip" alt="smile" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
 
-      <!--dollar-->
-      <div class="card" data-image="dollar">
-        <img src="dollar.jpg" class="front flip" alt="dollar" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <div class="card" data-image="dollar">
-        <img src="dollar.jpg" class="front flip" alt="dollar" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <!--smileDrop-->
-      <div class="card" data-image="smileDrop">
-        <img src="smileDrop.jpg" class="front flip" alt="smileDrop" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
-      <div class="card" data-image="smileDrop">
-        <img src="smileDrop.jpg" class="front flip" alt="smileDrop" />
-        <img src="hat.png" class="back" alt="hat" />
-      </div>
+        <!--loveEye-->
+        <div class="card" data-image="loveEye">
+            <img src="loveEye.jpg" class="front flip" alt="loveEye" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <div class="card" data-image="loveEye">
+            <img src="loveEye.jpg" class="front flip" alt="loveEye" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+
+        <!--dollar-->
+        <div class="card" data-image="dollar">
+            <img src="dollar.jpg" class="front flip" alt="dollar" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <div class="card" data-image="dollar">
+            <img src="dollar.jpg" class="front flip" alt="dollar" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <!--smileDrop-->
+        <div class="card" data-image="smileDrop">
+            <img src="smileDrop.jpg" class="front flip" alt="smileDrop" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
+        <div class="card" data-image="smileDrop">
+            <img src="smileDrop.jpg" class="front flip" alt="smileDrop" />
+            <img src="hat.png" class="back" alt="hat" />
+        </div>
     </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>

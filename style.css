@@ -25,7 +25,14 @@ body{
 
 
 
+.gameContainer p{
+    visibility: hidden;
+}
 
+.visible{
+    visibility: visible;
+    content: "out";
+}
 
 .container{
     width: 600px;

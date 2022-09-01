@@ -56,6 +56,8 @@ function fail() {
     secondCard.classList.remove("flip");
     resett();
   }, 1000);
+  timeout();
+  visible();
 }
 //reset
 function resett() {
@@ -81,3 +83,25 @@ shuffle();
 // let refresh = window.setTimeout(function () {
 //   window.location.reload();
 // }, 2200);
+
+//countdown
+var timeLeft = 5;
+var elem = document.getElementById("timer");
+
+var timerId = setInterval(countdown, 1000);
+
+function countdown() {
+  if (timeLeft == -1) {
+    clearTimeout(timerId);
+    doSomething();
+  } else {
+    elem.innerHTML = timeLeft + "";
+    timeLeft--;
+  }
+}
+
+const timeout = () => {
+  setTimeout(() => {
+    const visible = document.classList.add("visible");
+  }, 6000);
+};
