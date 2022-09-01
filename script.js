@@ -4,6 +4,7 @@ const gameContainer = document.getElementById("gameContainer");
 
 const gameInit = (count) => {
   gameContainer.innerHTML = "";
+  let timerId = setInterval(countdown, 1000);
 
   for (let index = 0; index < count / 2; index++) {
     const cardImg = `<img src="https://avatars.dicebear.com/api/adventurer/${index}.svg" class="front flip" alt="${index}" />`;
@@ -60,6 +61,7 @@ const gameInit = (count) => {
       secondCard.style.visibility = "hidden";
       points += 1;
       if (points === count / 2) {
+        clearTimeout(timerId);
         gameInit(count * 2);
       }
       reset();
@@ -89,14 +91,29 @@ const gameInit = (count) => {
     console.log("====================================");
     console.log("shuffling");
     console.log("====================================");
+
     cards.forEach((card, i) => {
       let index = Math.floor(Math.random() * (count - 1) + 1);
       card.style.order = index;
       card.id = i;
     });
   }
+  var timeLeft = 2.5 * count;
+  var elem = document.getElementById("timer");
+  elem.innerHTML = "";
 
+  function countdown() {
+    if (timeLeft == -1) {
+      clearTimeout(timerId);
+      console.log("Game Over");
+      gameInit(initialCount);
+    } else {
+      elem.innerHTML = timeLeft + "";
+      timeLeft--;
+    }
+  }
   shuffle();
+  countdown();
 };
 
 gameInit(initialCount);
