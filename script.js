@@ -1,4 +1,4 @@
-const count = 4;
+const initialCount = 4;
 const logoImg = `<img src="logo.png" class="back" alt="logo" />`;
 
 const gameInit = (count) => {
@@ -102,9 +102,4 @@ const gameInit = (count) => {
   shuffle();
 };
 
-gameInit(count);
-//winning message displaying
-//auto refreshing
-// let refresh = window.setTimeout(function () {
-//   window.location.reload();
-// }, 2200);
+gameInit(initialCount);
