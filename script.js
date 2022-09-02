@@ -76,7 +76,7 @@ const gameInit = (count) => {
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
       reset();
-    }, 1000);
+    }, 500);
   }
 
   //reset
